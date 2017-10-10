@@ -52,10 +52,10 @@ class SocketIOManager {
         });
     }
     get currentPlayers() {
-        let players = new Array();
-        let sockets = this.io.sockets.sockets;
-        for (let socketId of Object.keys(sockets)) {
-            let socket = sockets[socketId];
+        const players = new Array();
+        const sockets = this.io.sockets.sockets;
+        for (const socketId of Object.keys(sockets)) {
+            const socket = sockets[socketId];
             players.push({
                 color: socket.handshake.query.color,
                 id: socket.id,
