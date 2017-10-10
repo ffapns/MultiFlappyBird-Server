@@ -1,7 +1,7 @@
 export interface IConfig {
-    port: number;
+    port: any;
 }
 
 export class ProductionConfig implements IConfig {
-    public port: number = parseInt(process.env.PORT, 10) || 9001;
+    public port: any = process.env.PORT || 9001;
 }
