@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let stage = new Array();
+const stage = new Array();
 function generateStage(count) {
     for (let i = 0; i < count; i++) {
         stage.push({
@@ -11,8 +11,8 @@ function generateStage(count) {
 }
 class StageController {
     static getStage(req, res) {
-        let startIndex = req.query.start;
-        let endIndex = req.query.end;
+        const startIndex = req.query.start;
+        const endIndex = req.query.end;
         if (startIndex === undefined || endIndex === undefined) {
             res.status(400).send("Start and End must not be empty");
             return;
@@ -21,8 +21,8 @@ class StageController {
             res.status(400).send("Start and End must be number");
             return;
         }
-        let startIndexNumber = parseInt(startIndex, 10);
-        let endIndexNumber = parseInt(endIndex, 10);
+        const startIndexNumber = parseInt(startIndex, 10);
+        const endIndexNumber = parseInt(endIndex, 10);
         if (startIndexNumber > endIndexNumber) {
             res.status(400).send("Start must be greater than End");
             return;

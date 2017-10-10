@@ -69,11 +69,11 @@ export class SocketIOManager {
     }
 
     public get currentPlayers(): Array<IPlayer> {
-        let players = new Array<IPlayer>();
-        let sockets = this.io.sockets.sockets;
+        const players = new Array<IPlayer>();
+        const sockets = this.io.sockets.sockets;
 
-        for (let socketId of Object.keys(sockets)) {
-            let socket = sockets[socketId];
+        for (const socketId of Object.keys(sockets)) {
+            const socket = sockets[socketId];
 
             players.push({
                 color: socket.handshake.query.color,
